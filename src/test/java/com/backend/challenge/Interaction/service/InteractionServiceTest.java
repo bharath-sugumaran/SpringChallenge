@@ -36,6 +36,7 @@ public class InteractionServiceTest {
     @Test(expected = FileDetailsNotFoundException.class)
     public void fileDetailsNotFound() throws Exception {
         given(fileDetailsRepository.findFileDetailsByTypeAndApplicationPartDetailFileName(anyString(),anyString())).willReturn(null);
+        FileDetails fileDetailsInfo = interactionService.getFileDetails("SA-11-TT","Application2");
 
     }
 
